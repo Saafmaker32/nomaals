@@ -1,14 +1,15 @@
 <?php
 function getDBConnection() {
-    $servername = getenv("MYSQLHOST") ?: "nomaals.railway.internal";
-    $username = getenv("MYSQLUSER") ?: "root";
-    $password = getenv("MYSQLPASSWORD") ?: "MHvVWBcLtvzffwgLuWTmgBjKuMuqDGjy";
-    $dbname = getenv("MYSQLDATABASE") ?: "railway";
+    $servername = "mainline.proxy.rlwy.net";
+    $port = 59595;
+    $username = "root";
+    $password = "MHvVWBcLtvzffwgLuWTmgBjKuMuqDGjy";
+    $dbname = "railway";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("❌ Connection failed: " . $conn->connect_error);
     }
 
     return $conn;

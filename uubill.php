@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conn = new mysqli('localhost', 'root', '', 'my_base');
+    $conn = new mysqli($turntable.proxy.rlwy.net, $root, $WFpvhikyCgMPfFyqjZgmrZFZVKKOfhuF, $railway, $56655);
     if ($conn->connect_error) {
         die("Connectie mislukt: " . $conn->connect_error);
     }

@@ -1,19 +1,18 @@
 <?php
 function getDBConnection() {
-    $servername = "localhost";
+    $servername = "turntable.proxy.rlwy.net";
+    $port = 56655;
     $username = "root";
-    $password = "";
-    $dbname = "my_base";
+    $password = "WFpvhikyCgMPfFyqjZgmrZFZVKKOfhuF";
+    $dbname = "railway";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
     if ($conn->connect_error) {
-        // Log fout op server, toon geen gevoelige info aan gebruiker
-        error_log("Database connection failed: " . $conn->connect_error);
-        http_response_code(500);
-        exit("Databasefout. Probeer het later opnieuw.");
+        die("❌ Connectie mislukt: " . $conn->connect_error);
     }
 
     return $conn;
 }
 ?>
+
